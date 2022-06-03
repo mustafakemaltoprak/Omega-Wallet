@@ -89,3 +89,7 @@
   font-size: large;
   cursor: pointer;
 }
+
+.balance-USD {
+  font-size: small;
+}

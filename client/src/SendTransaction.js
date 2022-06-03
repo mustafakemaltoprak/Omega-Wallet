@@ -79,7 +79,7 @@ export default function SendTransaction(props) {
           <br></br>
           <input
             className="input"
-            placeholder="Amount"
+            placeholder="Amount ETH"
             ref={amountInput}
           ></input>
           <button
