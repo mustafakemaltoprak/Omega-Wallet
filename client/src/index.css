@@ -1,3 +1,7 @@
+* {
+  font-family: 'Courier New', Courier, monospace;
+}
+
 .eth-image {
   height: 25px;
   vertical-align: middle;
@@ -18,6 +22,10 @@
   margin-bottom: 5px;
   font-size: small;
   margin-left: 5px;
+}
+
+.wallet-address-span {
+  cursor: pointer;
 }
 
 .send-image {
@@ -109,4 +117,83 @@
 
 .balance-USD {
   font-size: small;
+}
+
+input:focus {
+  outline: none;
+}
+
+::selection {
+  background: grey;
+}
+
+.typewriter {
+  font-size: 60px;
+  text-align: center;
+  margin-top: 25px;
+}
+
+.typewriter-second {
+  font-size: 50px;
+  justify-content: center;
+  display: flex;
+}
+
+.homepage-picture {
+  height: 450px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 40px;
+}
+
+.buttons-div {
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 65px;
+}
+
+.homepage-button {
+  padding: 15.5px;
+  cursor: pointer;
+  color: white;
+  background-color: black;
+  border-width: 1px;
+  border-color: black;
+  border-style: solid;
+}
+
+.homepage-button:hover {
+  background-color: white;
+  color: black;
+}
+
+.continue-button {
+  margin-top: 25px;
+  padding: 15.5px;
+  cursor: pointer;
+  color: white;
+  background-color: black;
+  border-width: 1px;
+  border-color: black;
+  border-style: solid;
+}
+
+.intro-div {
+  margin-bottom: 25px;
+}
+
+.create-wallet-image {
+  height: 450px;
+  margin-top: 25px;
+}
+
+.continue-button:hover {
+  background-color: white;
+  color: black;
+}
+
+.container-div {
+  text-align: center;
+  margin-top: 25px;
 }

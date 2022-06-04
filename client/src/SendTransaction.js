@@ -59,7 +59,7 @@ export default function SendTransaction(props) {
             style={{ cursor: 'pointer' }}
           ></img>
           <br></br>
-          Send
+          <p style={{ marginTop: '5px' }}>Send</p>
         </div>
       ) : (
         <div className="center-div">
@@ -67,6 +67,7 @@ export default function SendTransaction(props) {
             className="input"
             placeholder="Recipient Address"
             ref={recipientInput}
+            spellCheck="false"
           ></input>
           <span
             className="x"
@@ -81,6 +82,7 @@ export default function SendTransaction(props) {
             className="input"
             placeholder="Amount ETH"
             ref={amountInput}
+            spellCheck="false"
           ></input>
           <button
             className="confirm-button"

@@ -1,24 +1,20 @@
-import AccountBalance from './AccountBalance';
-import Dropdown from './Dropdown';
-import ReadSmartContract from './ReadSmartContract';
-import SendTransaction from './SendTransaction';
-import React, { useState } from 'react';
+import React from 'react';
+import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
+import LoggedInWallet from './loggedInWallet';
+import HomePage from './HomePage';
+import CreateWalletPage from './CreateWalletPage';
+import ImportWalletPage from './ImportWalletPage';
 
 function App() {
-  const [toggledMain, setToggledMain] = useState(true);
-  const [toggledTest, setToggledTest] = useState(false);
   return (
-    <>
-      <Dropdown
-        toggledMain={toggledMain}
-        toggledTest={toggledTest}
-        setToggledMain={setToggledMain}
-        setToggledTest={setToggledTest}
-      />
-      <AccountBalance toggledMain={toggledMain} toggledTest={toggledTest} />
-      <br></br>
-      <SendTransaction toggledMain={toggledMain} toggledTest={toggledTest} />
-    </>
+    <Router>
+      <Routes>
+        <Route path="/details" element={<LoggedInWallet />} />
+        <Route path="/" element={<HomePage />} />
+        <Route path="/createWallet" element={<CreateWalletPage />} />
+        <Route path="/importWallet" element={<ImportWalletPage />} />
+      </Routes>
+    </Router>
   );
 }
 

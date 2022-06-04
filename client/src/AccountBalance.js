@@ -1,15 +1,16 @@
-import React, { useEffect, useState } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import React, { useState } from 'react';
 const { ethers } = require('ethers');
 
 export default function AccountBalance(props) {
   const [walletBalance, setWalletBalance] = useState(0);
   const [ethCurrentPrice, setEthCurrentPrice] = useState(0);
 
-  const address = '0x79B23B60Dc3351354CcB817f79641a9163F453F3';
+  const walletAddress = useSelector((state) => state.storeWalletAddress);
 
   let provider;
 
-  let testing;
+  let ethHoldingsInUsd;
 
   if (props.toggledTest) {
     provider = new ethers.providers.JsonRpcProvider(
@@ -23,7 +24,7 @@ export default function AccountBalance(props) {
       .then((res) => res.json())
       .then((result) => setEthCurrentPrice(result.USD));
 
-    testing = ethCurrentPrice * walletBalance;
+    ethHoldingsInUsd = ethCurrentPrice * walletBalance;
   }
 
   if (props.toggledMain) {
@@ -38,11 +39,11 @@ export default function AccountBalance(props) {
       .then((res) => res.json())
       .then((result) => setEthCurrentPrice(result.USD));
 
-    testing = ethCurrentPrice * walletBalance;
+    ethHoldingsInUsd = ethCurrentPrice * walletBalance;
   }
 
   async function toUseAwait() {
-    const balance = await provider.getBalance(address);
+    const balance = await provider.getBalance(walletAddress);
     setWalletBalance(ethers.utils.formatEther(balance));
   }
   toUseAwait();
@@ -50,9 +51,19 @@ export default function AccountBalance(props) {
   return (
     <>
       <div className="wallet-address">
-        {address.substring(0, 5) +
-          '...' +
-          address.substring(address.length - 10, address.length)}
+        <span
+          onClick={() => {
+            navigator.clipboard.writeText(walletAddress);
+          }}
+          className="wallet-address-span"
+        >
+          {walletAddress.substring(0, 5) +
+            '...' +
+            walletAddress.substring(
+              walletAddress.length - 10,
+              walletAddress.length
+            )}
+        </span>
       </div>
       <div className="balance">
         <img
@@ -61,12 +72,7 @@ export default function AccountBalance(props) {
         ></img>
         <span className="balance-amount">{walletBalance} ETH</span>
         <br></br>
-        <span className="balance-USD">
-          {!testing
-            ? testing
-            : testing.toString().substring(0, testing.toString().length - 13)}
-          $
-        </span>
+        <span className="balance-USD">{ethHoldingsInUsd}$</span>
       </div>
     </>
   );
