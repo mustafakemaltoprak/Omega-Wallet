@@ -72,7 +72,9 @@ export default function AccountBalance(props) {
         ></img>
         <span className="balance-amount">{walletBalance} ETH</span>
         <br></br>
-        <span className="balance-USD">{ethHoldingsInUsd}$</span>
+        <span className="balance-USD">
+          {ethHoldingsInUsd.toString().substring(0, 6)}$
+        </span>
       </div>
     </>
   );

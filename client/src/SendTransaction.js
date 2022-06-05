@@ -1,4 +1,5 @@
 import React, { useRef, useState } from 'react';
+import { useSelector } from 'react-redux';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 const { ethers } = require('ethers');
@@ -8,6 +9,8 @@ export default function SendTransaction(props) {
 
   const recipientInput = useRef(null);
   const amountInput = useRef(null);
+  const privateKey = useSelector((state) => state.storePrivateKey);
+
   let provider;
 
   if (props.toggledTest) {
@@ -25,7 +28,7 @@ export default function SendTransaction(props) {
   }
 
   // Insert your own private key
-  const wallet = new ethers.Wallet(process.env.REACT_APP_PRIVATE_KEY, provider);
+  const wallet = new ethers.Wallet(privateKey, provider);
 
   async function sendTx(address, amount) {
     try {
