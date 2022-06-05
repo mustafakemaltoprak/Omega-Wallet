@@ -4,11 +4,15 @@ Omega Wallet is a fully functioning crypto wallet built on the ETH blockchain wi
 
 The only time Omega Wallet stores your data is temporarily after importing/creating your wallet, its stored locally and the data is deleted upon page refresh.
 
+You can find a preview of this project [here](https://www.youtube.com/watch?v=dcOGvmr_q_0)
+
 #
 
 <br>
 
 ![Screen Recording 2022-06-04 at 20 49 41](https://user-images.githubusercontent.com/96595583/172021607-9836fb5e-c339-4687-b769-d89236e7d394.gif)
+
+#
 
 ## Get started
 
