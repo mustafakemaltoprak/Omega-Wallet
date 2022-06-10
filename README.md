@@ -1,6 +1,6 @@
 # Omega Wallet
 
-Omega Wallet is a fully functioning crypto wallet built on the ETH blockchain with a minimalist design, allowing you to directly interact with the blockchain at **maximum** security.
+Omega Wallet is a fully functional crypto wallet built on the ETH blockchain with a minimalist design, allowing you to directly interact with the blockchain at **maximum** security.
 
 The only time Omega Wallet stores your data is temporarily after importing/creating your wallet, its stored locally and the data is deleted upon page refresh.
 
