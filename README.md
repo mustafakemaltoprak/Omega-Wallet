@@ -15,7 +15,9 @@ You can find a preview of this project [here](https://www.youtube.com/watch?v=dc
 #
 
 ## Get started
-
+Click on [this](https://omegawallet.netlify.app/) to start the website.
+<br>
+<br>
 If you already have an existing wallet, all you have to do is click on "Import Wallet" and enter your private key.
 <br>
 <br>
