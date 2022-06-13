@@ -4,6 +4,7 @@ import LoggedInWallet from './loggedInWallet';
 import HomePage from './HomePage';
 import CreateWalletPage from './CreateWalletPage';
 import ImportWalletPage from './ImportWalletPage';
+import Error from './Error';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/createWallet" element={<CreateWalletPage />} />
         <Route path="/importWallet" element={<ImportWalletPage />} />
+        <Route path="/error" element={<Error />} />
       </Routes>
     </Router>
   );
