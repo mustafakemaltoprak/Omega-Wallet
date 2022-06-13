@@ -197,3 +197,34 @@ input:focus {
   text-align: center;
   margin-top: 25px;
 }
+
+.security-image {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+.security-div {
+  text-align: center;
+  margin-top: 25px;
+}
+
+.security-button {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+  padding: 15.5px;
+  cursor: pointer;
+  color: white;
+  background-color: black;
+  border-width: 1px;
+  border-color: black;
+  border-style: solid;
+}
+
+.security-button:hover {
+  background-color: white;
+  color: black;
+}

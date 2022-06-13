@@ -28,19 +28,25 @@ export default function SendTransaction(props) {
   }
 
   // Insert your own private key
-  const wallet = new ethers.Wallet(privateKey, provider);
+  let wallet;
+
+  if (privateKey) {
+    wallet = new ethers.Wallet(privateKey, provider);
+  }
 
   async function sendTx(address, amount) {
-    try {
-      const tx = await wallet.sendTransaction({
-        to: address,
-        value: ethers.utils.parseEther(amount),
-      });
+    if (wallet) {
+      try {
+        const tx = await wallet.sendTransaction({
+          to: address,
+          value: ethers.utils.parseEther(amount),
+        });
 
-      await tx.wait();
-      toast.success('Your transaction was successful', { theme: 'dark' });
-    } catch {
-      toast.error('Your transaction failed', { theme: 'dark' });
+        await tx.wait();
+        toast.success('Your transaction was successful', { theme: 'dark' });
+      } catch {
+        toast.error('Your transaction failed', { theme: 'dark' });
+      }
     }
   }
 

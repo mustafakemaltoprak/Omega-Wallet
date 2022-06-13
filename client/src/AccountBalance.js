@@ -48,6 +48,11 @@ export default function AccountBalance(props) {
   }
   toUseAwait();
 
+  var formatter = new Intl.NumberFormat('en-US', {
+    style: 'currency',
+    currency: 'USD',
+  });
+
   return (
     <>
       <div className="wallet-address">
@@ -73,7 +78,7 @@ export default function AccountBalance(props) {
         <span className="balance-amount">{walletBalance} ETH</span>
         <br></br>
         <span className="balance-USD">
-          {ethHoldingsInUsd.toString().substring(0, 6)}$
+          {formatter.format(ethHoldingsInUsd)}
         </span>
       </div>
     </>
