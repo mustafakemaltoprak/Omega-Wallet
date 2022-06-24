@@ -12,8 +12,8 @@ export default function Error() {
         For this reason, we NEVER store any of your information on our servers.
         <br></br>
         <br></br>
-        You will need to log back into your wallet if you refresh the page, we
-        hope you understand.
+        You will need to log back into your wallet if you refresh or leave the
+        page, we hope you understand.
       </div>
       <img
         className="security-image"

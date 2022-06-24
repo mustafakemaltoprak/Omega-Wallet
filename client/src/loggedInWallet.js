@@ -20,6 +20,13 @@ export default function LoggedInWallet() {
     }
   }, []);
 
+  document.addEventListener('visibilitychange', () => {
+    if (document.visibilityState !== 'visible') {
+      document.location.reload();
+      navigate('/error');
+    }
+  });
+
   return (
     <>
       <Dropdown
