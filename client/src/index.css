@@ -244,10 +244,22 @@ input:focus {
   }
 
   .homepage-picture {
-    max-height: 40vw;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 40px;
+    display: none;
+  }
+
+  .buttons-div {
+    display: flex;
+    flex-direction: column;
+    margin-top: 65px;
+    align-items: center;
+  }
+
+  .homepage-button {
+    margin-bottom: 25px;
+    width: 300px;
+  }
+
+  .dropdown {
+    margin-bottom: 50px;
   }
 }
